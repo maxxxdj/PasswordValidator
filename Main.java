@@ -4,8 +4,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Type your password:");
-        String password = scanner.nextLine();
-        System.out.println(PasswordValidator.validate(password));
+        try {
+            String password = scanner.nextLine();
+            System.out.println(PasswordValidator.validate(password));
+        } catch(NullPointerException e){
+            System.err.println("Invalid input!");
+        }
     }
 
 
